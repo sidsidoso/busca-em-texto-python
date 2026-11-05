@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "busca-em-texto-python"
+version = "1.0.0"
+description = "Busca de padrões em texto em Python puro: força bruta, KMP, Rabin-Karp, Boyer-Moore-Horspool, algoritmo Z e Aho-Corasick."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "sidsidoso" }]
+keywords = ["busca-em-texto", "kmp", "rabin-karp", "boyer-moore-horspool", "aho-corasick", "algoritmos"]
+
+[project.urls]
+Repository = "https://github.com/sidsidoso/busca-em-texto-python"
+
+[project.scripts]
+busca-texto = "busca_texto.cli:principal"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
